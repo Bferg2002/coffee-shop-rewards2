@@ -1,6 +1,6 @@
 # coffee-shop-rewards2
 
-# ☕ Coreye’s Coffee Cafe (Triple C’s)
+# Coreye’s Coffee Cafe (Triple C’s)
 
 ### “Coffee. Code. Consistency.”
 
@@ -18,7 +18,7 @@ Don’t let the Bronze-tier customers finesse free drinks.
 
 ---
 
-## 🎯 The Mission
+## The Mission
 
 Customers:
 
@@ -49,7 +49,7 @@ Main.java
 
 ---
 
-# 🟢 Level 1 — “Open the Shop”
+# Level 1 — “Open the Shop”
 
 Create a `Customer`.
 
@@ -73,7 +73,7 @@ Nobody starts Gold at Triple C’s.
 
 ---
 
-# 🟡 Level 2 — “Run the Register”
+# Level 2 — “Run the Register”
 
 Create a `Purchase` class.
 
@@ -103,7 +103,7 @@ Update the customer’s points correctly.
 
 ---
 
-# 🔴 Level 3 — “Status Matters”
+# Level 3 — “Status Matters”
 
 Customers unlock tiers:
 
@@ -126,7 +126,7 @@ Clean. Clear. Professional.
 
 ---
 
-# 🔵 Level 4 — “Make It Feel Like a Real Checkout”
+# Level 4 — “Make It Feel Like a Real Checkout”
 
 Triple C’s runs smooth.
 
