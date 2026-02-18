@@ -2,14 +2,24 @@ package org.codedifferently;
 
 public class Receipt
 {
-    double totalAmt;
+    private double totalAmt; //customer's total bill amount
+    private StringBuilder orderSummary = new StringBuilder("You ordered:\n");   //creates the customer's receipt
 
+    //setters and getters for the instance variables
+    public void setTotalAmt(double totalAmt) {
+        this.totalAmt = totalAmt;
+    }
+
+    public double getTotalAmt() {
+        return totalAmt;
+    }
+
+    //creates the receipt for the customer by creating coffeeItem objects
     public  StringBuilder createCustomerOrder(Customer customer, String customerOrder){
-        StringBuilder orderSummary = new StringBuilder("You ordered:\n");
         int drinkCounter = 0;
         for (int i=0; i< customerOrder.length(); i++) {
-            switch (Character.getNumericValue(customerOrder.charAt(i))) {
 
+            switch (Character.getNumericValue(customerOrder.charAt(i))) {
                 case 1:
                     CoffeeItem item1 = new CoffeeItem("Coffee", 10.00);
                     orderSummary.append(
@@ -65,19 +75,28 @@ public class Receipt
                     break;
             }
         }
-        customer.setDrinksPurchased(drinkCounter);
-        orderSummary.append(
-                String.format("%nYour total is $%.2f", totalAmt)
-        );
+
+        customer.setDrinksPurchased(customer.getDrinksPurchased() + drinkCounter);
+
         return orderSummary;
     }
 
+    //returns the customer's receipt '
+    public String getFullReceipt() {
+        return orderSummary.toString() + String.format("%nYour total is $%.2f", totalAmt);
+    }
+
+    //checks to see if the customer has earned any awards and displays a message to the user
     public void checkRewards(Customer customer, double total){
         if (customer.isEligibleForReward()) {
             System.out.println("Congrats, You are eligible for a reward!\nYour next drink is free!");
         }
         if (total > 20.00){
             System.out.println("You have gained bonus points on your account.");
+        }
+
+        if(customer.getDrinksPurchased() < 5){
+            System.out.println("Drinks towards reward: " + (5 - customer.getDrinksPurchased()));
         }
 
     }

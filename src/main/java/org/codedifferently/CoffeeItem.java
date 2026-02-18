@@ -1,18 +1,16 @@
 package org.codedifferently;
 
 public class CoffeeItem {
-    private String itemName;
-    private double price;
+    private String itemName;        //name of the item
+    private double price;       //price of the item
 
+    //constructor for the item
     CoffeeItem(String itemName, double price){
         this.itemName = itemName;
         this.price = price;
     }
 
-    CoffeeItem(String itemName){
-        this.itemName = itemName;
-        this.price = 0;
-    }
+    //setters and getters for the coffee item
     public String getItemName(){
         return itemName;
     }

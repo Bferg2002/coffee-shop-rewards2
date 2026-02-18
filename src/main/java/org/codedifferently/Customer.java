@@ -1,21 +1,20 @@
 package org.codedifferently;
 
 public class Customer {
-   private String name;
-   private String email;
-   private int drinksPurchased;
-   private double wallet;
-
+   private String name;     //name of the customer
+   private String email;    //email for the customer
+   private int drinksPurchased; //number of drinks the customer purchased
    Customer(){
-
    }
 
+   //Constructor for the customer object
    Customer(String name, String email, int drinksPurchased){
        this.name = name;
        this.email = email;
        this.drinksPurchased = drinksPurchased;
    }
 
+   //setters and getters for the instance variables
     public String getName(){
        return name;
    }
@@ -32,14 +31,6 @@ public class Customer {
         this.email = email;
     }
 
-    public double getWallet() {
-        return wallet;
-    }
-
-    public void setWallet(double wallet) {
-        this.wallet = wallet;
-    }
-
     public int getDrinksPurchased() {
         return drinksPurchased;
     }
@@ -48,6 +39,8 @@ public class Customer {
         this.drinksPurchased = drinksPurchased;
     }
 
+
+    //checks to see if the customer is eligible for a reward
     public boolean isEligibleForReward(){
        if(drinksPurchased >= 5){
            return true;
