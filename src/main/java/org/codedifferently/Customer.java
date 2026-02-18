@@ -13,7 +13,7 @@ public class Customer {
    Customer(String name, String email, int drinksPurchased){
        this.name = name;
        this.email = email;
-       drinksPurchased = 0;
+       this.drinksPurchased = drinksPurchased;
    }
 
     public String getName(){
@@ -49,7 +49,7 @@ public class Customer {
     }
 
     public boolean isEligibleForReward(){
-       if(drinksPurchased == 5){
+       if(drinksPurchased >= 5){
            return true;
        }
        return false;
