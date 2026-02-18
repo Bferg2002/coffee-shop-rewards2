@@ -1,16 +1,18 @@
 package org.codedifferently;
 
-public class Item {
+public class CoffeeItem {
     private String itemName;
     private double price;
-    private boolean isDrink;
 
-    Item(String itemName, double price, boolean isDrink){
+    CoffeeItem(String itemName, double price){
         this.itemName = itemName;
         this.price = price;
-        this.isDrink = isDrink;
     }
 
+    CoffeeItem(String itemName){
+        this.itemName = itemName;
+        this.price = 0;
+    }
     public String getItemName(){
         return itemName;
     }
@@ -27,11 +29,4 @@ public class Item {
         this.price = price;
     }
 
-    public boolean isDrink() {
-        return isDrink;
-    }
-
-    public void setDrink(boolean drink) {
-        isDrink = drink;
-    }
-}
+} // ends CoffeeItem class

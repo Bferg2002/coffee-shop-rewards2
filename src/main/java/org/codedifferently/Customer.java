@@ -2,17 +2,18 @@ package org.codedifferently;
 
 public class Customer {
    private String name;
-   private int phoneNumber;
-   private int points;
+   private String email;
+   private int drinksPurchased;
+   private double wallet;
 
    Customer(){
 
    }
 
-   Customer(String name, int phoneNumber){
+   Customer(String name, String email, int drinksPurchased){
        this.name = name;
-       this.phoneNumber = phoneNumber;
-       this.points = 0;
+       this.email = email;
+       drinksPurchased = 0;
    }
 
     public String getName(){
@@ -23,19 +24,34 @@ public class Customer {
         this.name = name;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String email) {
+        this.email = email;
     }
 
-    public int getPoints() {
-        return points;
+    public double getWallet() {
+        return wallet;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public void setWallet(double wallet) {
+        this.wallet = wallet;
     }
-}
+
+    public int getDrinksPurchased() {
+        return drinksPurchased;
+    }
+
+    public void setDrinksPurchased(int drinksPurchased) {
+        this.drinksPurchased = drinksPurchased;
+    }
+
+    public boolean isEligibleForReward(){
+       if(drinksPurchased == 5){
+           return true;
+       }
+       return false;
+    }
+}// ends Customer class
