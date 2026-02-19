@@ -40,7 +40,9 @@ public class Main {
                     System.out.println("Invalid selection. Please enter numbers 1-6 only.");
                     System.out.println("Try again:");
                 }
-            }            System.out.println("*************************************");
+            }
+
+            System.out.println("*************************************");
             receipt.createCustomerOrder(customer1, customerOrder);
             System.out.println(receipt.getFullReceipt());
             System.out.println("*************************************");
@@ -49,13 +51,31 @@ public class Main {
 
             //prompts the user to check out
             System.out.println("Are you ready to checkout? (y/n)");
-            String choice = input.nextLine().toLowerCase();
-            if(choice.equals("y")){
-                System.out.println("Goodbye, have a great day!");
-                checkout = true;
+
+            boolean validAnswer = false;
+            String choice = "";
+
+            while (!validAnswer) {
+
+                choice = input.nextLine().toLowerCase();
+
+                /*this chunk of code checks to see if the user's choice is a valid input
+                 and if they want to continue shopping or not*/
+                if (choice.matches("[yn]")) {
+                    validAnswer = true;
+
+                    if (choice.equals("y")) {
+                        System.out.println("Goodbye, have a great day!");
+                        checkout = true;
+                    }
+
+                } else {
+                    System.out.println("Invalid selection. Please enter y or n.");
+                    System.out.println("Try again:");
+                }
             }
 
-       } while(!checkout);
+        } while(!checkout);
     }
 
 
